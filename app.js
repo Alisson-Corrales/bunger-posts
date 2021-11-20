@@ -16,17 +16,15 @@ const connectDB = require('./DB/connect')
 const xss = require("xss-clean")
 const helmet = require("helmet")
 const cors = require("cors")
-const rateLimiter = require("rateLimiter")
+
 //
 //variables
 const port = process.env.PORT || 3000
-const min = 1000 * 60
-const limit = 15 * min
+
 
 app
     .set('trust proxy', 1)
     .use(helmet()).use(cors()).use(xss())
-    .use(rateLimiter({ windowMs: limit, max: 100 }))
     .use([express.urlencoded({ extended: false }), express.json()])
     //paths
     .use("/api/v1/posts", postsRouter)

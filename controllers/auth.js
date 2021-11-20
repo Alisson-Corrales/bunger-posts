@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const User = require("../models/userSchema")
+const User = require("../models/user")
 const { StatusCodes } = require("http-status-codes")
 const bcrypt = require("bcrypt")
 
