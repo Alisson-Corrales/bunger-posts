@@ -35,4 +35,4 @@ const deletePost = (req, res) =>{
     res.send("this works")
 }
 
-module.exports = { postPost, getOnePost, getAllPosts, editPost, deleteAllPosts, deletePost}
+module.exports = { postPost, getOnePost, getAllPosts, editPost, deleteAllPosts, deletePost }
