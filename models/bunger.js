@@ -3,11 +3,15 @@ const mongoose = require("mongoose")
 const bungerSchema = new mongoose.Schema({
   bunger:{
     img: { 
-      required: [true, "please provide a img"], 
+      required: [true, "oh my GOD add a img!! >:((("], 
       Type: String, 
       unique: true,
     },
-    Reputation: {
+    title:{
+        required: [true, "you bingus, name the baby"],
+        Type: String,
+    },
+    reputation: {
       Type: String,
       default: '0'
     },
@@ -16,7 +20,7 @@ const bungerSchema = new mongoose.Schema({
       ref: "User",
       required: true,
     },
-    required: [true, "please provide a img"], 
+    //required: [true, "oh my GOD add everything!!"], 
   }, timestamps: true });
 
 
