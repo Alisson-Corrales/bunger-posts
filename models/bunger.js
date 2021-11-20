@@ -1,10 +1,10 @@
 const mongoose = require("mongoose")
 
 const bungerSchema = new mongoose.Schema({
-  bunger:{
-    img: { 
-      required: [true, "please provide a img"], 
-      Type: String, 
+  bunger: {
+    img: {
+      required: [true, "please provide a img"],
+      Type: String,
       unique: true,
     },
     Reputation: {
@@ -16,8 +16,9 @@ const bungerSchema = new mongoose.Schema({
       ref: "User",
       required: true,
     },
-    required: [true, "please provide a img"], 
-  }, timestamps: true });
+    required: [true, "please provide a img"],
+  }, timestamps: true
+});
 
 
 module.exports = mongoose.model("bunger", bungerSchema);

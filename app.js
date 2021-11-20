@@ -11,14 +11,26 @@ const postsRouter = require("./routes/posts");
 //app core
 const connectDB = require('./DB/connect')
 
+
+//Security
+const xss = require("xss-clean")
+const helmet = require("helmet")
+const cors = require("cors")
+const rateLimiter = require("rateLimiter")
+//
 //variables
 const port = process.env.PORT || 3000
-
+const min = 1000 * 60
+const limit = 15 * min
 
 app
-.use("/api/v1/posts", postsRouter)
-.use("api/v1/auth", authRouter)
-
+    .set('trust proxy', 1)
+    .use(helmet()).use(cors()).use(xss())
+    .use(rateLimiter({ windowMs: limit, max: 100 }))
+    .use([express.urlencoded({ extended: false }), express.json()])
+    //paths
+    .use("/api/v1/posts", postsRouter)
+    .use("api/v1/auth", authRouter)
 const startup = async () => {
     try {
         await connectDB(process.env.MONGO_URL);

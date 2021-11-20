@@ -1,9 +1,17 @@
 {
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "express-rate-limit": "^5.5.1",
+    "helmet": "^4.6.0",
     "http-status-codes": "^2.1.4",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.0.13"
+    "mongoose": "^6.0.13",
+    "swagger-ui-express": "^4.1.6",
+    "xss": "^1.0.10",
+    "yamljs": "^0.3.0"
   }
 }
