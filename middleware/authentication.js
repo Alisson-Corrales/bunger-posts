@@ -13,7 +13,7 @@ const authMid = (req, res, next) => {
 
     try{
         const payload = jwt.verify(token, process.env.JWT_SECRET)
-        req.user = { userID: payload.userID, name: patload.name }
+        req.user = { userID: payload.userID, name: payload.name }
         next()
     } catch (err) {
         throw new UnauthError('Not authorized to be in this route!!');
