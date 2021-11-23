@@ -1,15 +1,19 @@
-const express = require('express');
-const app = express();
 //enviroment setup
 require("dotenv").config();
-//require("express-async-errors");
+require("express-async-errors");
+
+//app core
+const express = require('express');
+const app = express();
+const connectDB = require('./DB/connect')
+
+//middleware
+const auth = require("./middleware/authentication")
 
 //routes
 const authRouter = require("./routes/auth");
 const postsRouter = require("./routes/posts");
 
-//app core
-const connectDB = require('./DB/connect')
 
 
 //Security
@@ -28,7 +32,7 @@ app
     .use([express.urlencoded({ extended: false }), express.json()])
     //paths
     .use("/api/v1/posts", postsRouter)
-    .use("api/v1/auth", authRouter)
+    .use("/api/v1/auth", authRouter)
 const startup = async () => {
     try {
         await connectDB(process.env.MONGO_URL);

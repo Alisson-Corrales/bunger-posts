@@ -5,7 +5,7 @@ const { UnauthError } = require('../errors')
 const authMid = (req, res, next) => {
     const authHeader = req.headers.authorization
 
-    if (!authHeader || !authentHeader.startsWith("Bearer")) {
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
         throw new UnauthError("YOU are not authorized to be here >:O")
     }
 

@@ -1,5 +1,8 @@
+const { StatusCodes } = require("http-status-codes")
 const Bung = require("../models/bunger");
-const { StatusCode } = require("http-status-codes")
+//const User = require("../models/user")
+
+
 
 
 //🍔
@@ -12,13 +15,17 @@ const getOnePost = (req, res) =>{
     res.send("this works")
 }
 
+
 //🍔
 const getAllPosts = async (req, res) =>{
-    const bung =  await Bung.find({ createdBy: req.user.userID }).sort(
+    const { userID } = req.user.userID;
+
+    const bung =  await Bung.find({ createdBy: userID }).sort(
         "created at"
     )
-    res.status(StatusCode.OK).json({ jobs, length: jobs.length });
+    res.status(StatusCodes.OK).json({ bung, length: bung.length });
 };
+
 
 //🍔
 const editPost = (req, res) =>{
