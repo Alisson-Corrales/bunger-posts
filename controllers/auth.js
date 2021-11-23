@@ -34,7 +34,8 @@ const login = async (req, res) => {
   res
     .status(StatusCodes.OK)
     .json({ user: { name: user.name, userID: user._id }, token })
-    .send("you are logged in, clown");
+    
+    
 };
 
 module.exports = { register, login };

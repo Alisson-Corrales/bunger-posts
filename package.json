@@ -9,6 +9,8 @@
     "helmet": "^4.6.0",
     "http-status-codes": "^2.1.4",
     "jsonwebtoken": "^8.5.1",
+    "mongo": "^0.1.0",
+    "mongodb": "^4.2.0",
     "mongoose": "^6.0.13",
     "swagger-ui-express": "^4.1.6",
     "xss": "^1.0.10",

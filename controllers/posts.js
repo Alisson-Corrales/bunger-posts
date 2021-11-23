@@ -6,8 +6,13 @@ const Bung = require("../models/bunger");
 
 
 //🍔
-const postPost = (req, res) =>{
-    res.send("this works")
+const postPost = async (req, res) =>{
+    const dude = req.user.userID
+    console.log(dude);
+    req.body.createdBy = req.user.userID
+    const bunger = await Bung.create(req.body.createdBy);
+
+    res.status(StatusCodes.CREATED.json({ bunger }));
 }
 
 //🍔

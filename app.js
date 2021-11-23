@@ -8,7 +8,7 @@ const app = express();
 const connectDB = require('./DB/connect')
 
 //middleware
-const auth = require("./middleware/authentication")
+const authMid = require("./middleware/authentication")
 
 //routes
 const authRouter = require("./routes/auth");
@@ -33,6 +33,7 @@ app
     //paths
     .use("/api/v1/posts", postsRouter)
     .use("/api/v1/auth", authRouter)
+
 const startup = async () => {
     try {
         await connectDB(process.env.MONGO_URL);
