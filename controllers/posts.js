@@ -18,9 +18,9 @@ const getOnePost = (req, res) =>{
 
 //🍔
 const getAllPosts = async (req, res) =>{
-    const { userID } = req.user.userID;
+    //const { userID } = req.user.userID;
 
-    const bung =  await Bung.find({ createdBy: userID }).sort(
+    const bung =  await Bung.find({ createdBy: req.user.userID }).sort(
         "created at"
     )
     res.status(StatusCodes.OK).json({ bung, length: bung.length });
