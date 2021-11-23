@@ -31,7 +31,7 @@ app
     .use(helmet()).use(cors()).use(xss())
     .use([express.urlencoded({ extended: false }), express.json()])
     //paths
-    .use("/api/v1/posts", postsRouter)
+    .use("/api/v1/posts", authMid, postsRouter)
     .use("/api/v1/auth", authRouter)
 
 const startup = async () => {

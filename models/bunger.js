@@ -1,27 +1,27 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
-const bungerSchema = new mongoose.Schema(
+const BungerSchema = new mongoose.Schema(
   {
-  bunger:{
-    img: { 
-      Type: String, 
+    img: {
+      type: String,
       //unique: true,
     },
-    title:{
-        //required: [true, "you bingus, name the baby"],
-        Type: String,
+    title: {
+      //required: [true, "you bingus, name the baby"],
+      type: String,
     },
     reputation: {
-      Type: String,
-      default: 0
+      type: String,
+      default: 0,
     },
     createdBy: {
       type: mongoose.Types.ObjectId,
       ref: "User",
       required: true,
     },
-    //required: [true, "oh my GOD add everything!!"], 
-  }, }, {timeStamp: true });
+    //required: [true, "oh my GOD add everything!!"],
+  },
+  { timeStamp: true }
+);
 
-
-module.exports = mongoose.model("bunger", bungerSchema);
+module.exports = mongoose.model("Bunger", BungerSchema);
