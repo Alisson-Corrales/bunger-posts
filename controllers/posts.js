@@ -14,6 +14,11 @@ const postPost = async (req, res) => {
 };
 
 //🍔
+const postPost = async (req, res) => {
+    const dude = req.user.userID
+    console.log(req.body);
+    req.body.createdBy = dude
+    const bunger = await Bung.create(req.body);
 const getOnePost = async (req, res) => {
   //const { userID } = req.user.userID;
   const { id: jobID } = req.params;
@@ -29,27 +34,48 @@ const getOnePost = async (req, res) => {
 
 //🍔
 const getAllPosts = async (req, res) => {
-  //const { userID } = req.user.userID;
+    //const { userID } = req.user.userID;
 
-  const bung = await Bung.find({ createdBy: req.user.userID }).sort(
-    "created at"
-  );
-  res.status(StatusCodes.OK).json({ bung, length: bung.length });
+    const bung = await Bung.find({ createdBy: req.user.userID }).sort(
+        "created at"
+    )
+    res.status(StatusCodes.OK).json({ bung, length: bung.length });
 };
 
 //🍔
-const editPost = (req, res) => {
-  res.send("this works");
-};
+const editPost = async (req, res) => {
+    const { _id: bungerID, title: bungerName } = req.body
+    const { userID } = req.user
+
+    if (!bungerID || !bungerName) {
+        throw new badRequestError('Please provide Bunger Name and title')
+    }
+    if (!userID) {
+        throw new badRequestError('Please provide userID')
+    }
+    const Bunger = await Bunger.findByIdAndUpdate(
+        { bungerID, bungerName, createdBy: userID },
+        req.body,
+        { new: true, runValidators: true }
+    )
+
+    if (!Bunger) {
+        throw new badRequestError(`no bunger with id ${bungerID}`)
+    }
+    res.status(StatusCodes.OK).json({ Bunger })
+}
+
+
 
 //🍔
-const deletePost = (req, res) => {
-};
+const deletePost = async (req, res) => {
+    const { _id: bungerID } = req
 
-module.exports = {
-  postPost,
-  getOnePost,
-  getAllPosts,
-  editPost,
-  deletePost,
-};
+    const Bunger = await Bunger.findOneAndRemove({ _id: bungerID })
+    if (!Bunger) {
+        throw new badRequestError(`no bunger with id ${bungerID}`)
+    }
+    res.status(StatusCodes.OK).json({ Bunger })
+}
+
+module.exports = { postPost, getOnePost, getAllPosts, editPost, deletePost }
