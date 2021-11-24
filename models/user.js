@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "provide a name please"],
+    required: [true, "do you really think we would let you in without a name"],
     minlength: 3,
     maxlength: 50
   },
@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: [true, "please provide a password"],
+    required: [true, "give us a password. and try to be smart about it"],
     minlength: 6
   },
 });

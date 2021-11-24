@@ -4,11 +4,11 @@ const BungerSchema = new mongoose.Schema(
   {
     img: {
       type: String,
-      //unique: true,
+      required:[true, "oh my god the whole POINT is to add images"]
     },
     title: {
-      //required: [true, "you bingus, name the baby"],
       type: String,
+      required: [true, "you bingus, name the baby"],
     },
     reputation: {
       type: String,
@@ -17,7 +17,7 @@ const BungerSchema = new mongoose.Schema(
     createdBy: {
       type: mongoose.Types.ObjectId,
       ref: "User",
-      required: true,
+      required: [true, "you are not safe from ruining your digital footprint"],
     },
     //required: [true, "oh my GOD add everything!!"],
   },

@@ -44,6 +44,7 @@ const editPost = (req, res) => {
 
 //🍔
 const deletePost = (req, res) => {
+  res.send("this works");
 };
 
 module.exports = {

@@ -1,0 +1,142 @@
+USER=bunger
+MONGO_URL=mongodb+srv://bunger:G0iqplTOfStPc3We@cluster0.vtkzm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+JWT_SECRET=G0iqplTOfStPc3We
+
+
+Tomy userID = 619c2fbb2a43e432169473d2
+
+{
+    "bung": [
+        {
+            "reputation": "0",
+            "_id": "619d76b39160a8bba5ad2e50",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "reputation": "0",
+            "_id": "619d76db9160a8bba5ad2e52",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "reputation": "0",
+            "_id": "619d772679e93a116e6f9217",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d797d7af427a0198d23a4",
+            "img": "bunger.png",
+            "reputation": "5",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d819505c8ba5df102a0db",
+            "img": "bunger.png",
+            "reputation": "5",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d824031318c7d1b9a50b6",
+            "img": "bunger.png",
+            "reputation": "1",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d824631318c7d1b9a50b8",
+            "img": "bunger.png",
+            "reputation": "2",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d824b31318c7d1b9a50ba",
+            "img": "bunger.png",
+            "reputation": "3",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d825531318c7d1b9a50bc",
+            "img": "bunger.png",
+            "reputation": "4",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d825d31318c7d1b9a50be",
+            "img": "bunger.png",
+            "reputation": "6",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d826631318c7d1b9a50c0",
+            "img": "bunger.png",
+            "reputation": "7",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d826e31318c7d1b9a50c2",
+            "img": "bunger.png",
+            "reputation": "8",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d827731318c7d1b9a50c4",
+            "img": "bunger.png",
+            "reputation": "9",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d827f31318c7d1b9a50c6",
+            "img": "bunger.png",
+            "reputation": "10",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d828731318c7d1b9a50c8",
+            "img": "bunger.png",
+            "reputation": "11",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d829531318c7d1b9a50ca",
+            "img": "bunger.png",
+            "reputation": "12",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d82a331318c7d1b9a50cc",
+            "img": "bunger.png",
+            "reputation": "13",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d82b831318c7d1b9a50cf",
+            "img": "bunger.png",
+            "reputation": "14",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        },
+        {
+            "_id": "619d82c431318c7d1b9a50d1",
+            "img": "bunger.png",
+            "reputation": "15",
+            "createdBy": "619d7350770189f81176fe23",
+            "__v": 0
+        }
+    ],
+    "length": 19
+}
