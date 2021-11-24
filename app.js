@@ -14,7 +14,9 @@ const authMid = require("./middleware/authentication")
 const authRouter = require("./routes/auth");
 const postsRouter = require("./routes/posts");
 
-
+//swaggerUI
+const YAML = require("yamljs");
+const swaggerUI = require("swagger-ui-express");
 
 //Security
 const xss = require("xss-clean")
@@ -29,6 +31,13 @@ const port = process.env.PORT || 3000
 app
     .set('trust proxy', 1)
     .use(helmet()).use(cors()).use(xss())
+    
+    .get("/", (req, res) => {
+        res.send(`<h1>Jobs API</h1><a href="/api-docs">Documentation</a>`);
+      })
+    
+      .use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDoc))
+
     .use([express.urlencoded({ extended: false }), express.json()])
     //paths
     .use("/api/v1/posts", authMid, postsRouter)
